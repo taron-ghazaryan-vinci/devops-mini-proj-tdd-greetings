@@ -10,3 +10,8 @@ test('greet should return  "Hello, my friend" when nothing is given ', () => {
   expect(greet()).toBe('Hello, my friend')
   expect(greet(null)).toBe('Hello, my friend')
 })
+
+test('greet should return "HELLO, JEAN-KEVIN!" when given JEAN-KEVIN', () => {
+  expect(greet('JEAN-KEVIN')).toBe('HELLO, JEAN-KEVIN!')
+  expect(greet('JEAN-KEVIn')).toBe('Hello, JEAN-KEVIn')
+})
