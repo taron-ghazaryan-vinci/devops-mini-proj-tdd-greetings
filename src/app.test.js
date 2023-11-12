@@ -1,7 +1,7 @@
 /* eslint-disable no-undef */
 const greet = require('./app')
 
-test('greet should return "Hello, Jean-Kevin" when given Jean-Kevin', () => {
+test('greet should return "Hello, Jean-Kevin" when Jean-Kevin is given', () => {
   expect(greet('Jean-Kevin')).toBe('Hello, Jean-Kevin')
 })
 
@@ -11,7 +11,12 @@ test('greet should return  "Hello, my friend" when nothing is given ', () => {
   expect(greet(null)).toBe('Hello, my friend')
 })
 
-test('greet should return "HELLO, JEAN-KEVIN!" when given JEAN-KEVIN', () => {
+test('greet should return "HELLO, JEAN-KEVIN!" when JEAN-KEVIN is given', () => {
   expect(greet('JEAN-KEVIN')).toBe('HELLO, JEAN-KEVIN!')
   expect(greet('JEAN-KEVIn')).toBe('Hello, JEAN-KEVIn')
+})
+
+test('greet should return "Hello, Kratos and Thanathos." when ["Kratos", "Thanathos"] is given', () => {
+  const twoNames = ['Kratos', 'Thanathos']
+  expect(greet(twoNames)).toBe('Hello, Kratos and Thanathos.')
 })
