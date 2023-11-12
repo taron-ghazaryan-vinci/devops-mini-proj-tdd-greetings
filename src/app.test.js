@@ -20,3 +20,8 @@ test('greet should return "Hello, Kratos and Thanathos." when ["Kratos", "Thanat
   const twoNames = ['Kratos', 'Thanathos']
   expect(greet(twoNames)).toBe('Hello, Kratos and Thanathos.')
 })
+
+test('greet should return "Hello, Kratos, Thanathos and Hypnos." when ["Kratos", "Thanathos" , "Hypnos"] is given', () => {
+  const multipleNames = ['Kratos', 'Thanathos', 'Hypnos']
+  expect(greet(multipleNames)).toBe('Hello, Kratos, Thanathos and Hypnos.')
+})
