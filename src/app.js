@@ -5,13 +5,7 @@ function greet (name) {
   if (!Array.isArray(name)) {
     return isNotArray(name)
   } else {
-    for (let i = 0; i < name.length; i++) {
-      if (name[i] === 'fr' || name[i] === 'nl' || name[i] === 'en') {
-        language = name[i]
-        name.splice(i, 1)
-        break
-      }
-    }
+    language = findLanguage(name, language)
     if (language === 'fr') {
       hello = 'Bonjour'
       and = ' et '
@@ -63,6 +57,17 @@ function greet (name) {
     } else {
       return hello + ', ' + name.join(', ') + and + lastElement + '.'
     }
+  }
+
+  function findLanguage (name, language) {
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === 'fr' || name[i] === 'nl' || name[i] === 'en') {
+        language = name[i]
+        name.splice(i, 1)
+        break
+      }
+    }
+    return language
   }
 }
 
