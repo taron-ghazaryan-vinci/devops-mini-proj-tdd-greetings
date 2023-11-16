@@ -3,8 +3,32 @@ function greet (name) {
     if (!name || name.trim().length === 0) return 'Hello, my friend'
     if (name.toUpperCase() === name) return 'HELLO, ' + name.toUpperCase() + '!'
   } else {
+    const nameUpperCase = []
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === name[i].toUpperCase()) {
+        nameUpperCase.push(name[i])
+        name.splice(i, 1)
+        i--
+      }
+    }
+    if (name.length === 0) {
+      if (nameUpperCase.length > 2) {
+        const lastElementUpperCase = nameUpperCase.pop()
+        return 'HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+      } else {
+        return 'HELLO ' + nameUpperCase.join(' AND ') + '!'
+      }
+    }
     const lastElement = name.pop()
-    return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '.'
+    if (nameUpperCase.length > 1) {
+      const lastElementUpperCase = nameUpperCase.pop()
+      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '. AND HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+    }
+    if (nameUpperCase.length === 1) {
+      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '. AND HELLO ' + nameUpperCase[0] + '!'
+    } else {
+      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '.'
+    }
   }
   return 'Hello, ' + name
 }
