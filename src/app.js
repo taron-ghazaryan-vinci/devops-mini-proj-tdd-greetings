@@ -1,7 +1,6 @@
 function greet (name) {
   if (!Array.isArray(name)) {
-    if (!name || name.trim().length === 0) return 'Hello, my friend'
-    if (name.toUpperCase() === name) return 'HELLO, ' + name.toUpperCase() + '!'
+    return isNotArray(name)
   } else {
     const nameUpperCase = []
     for (let i = 0; i < name.length; i++) {
@@ -12,13 +11,31 @@ function greet (name) {
       }
     }
     if (name.length === 0) {
-      if (nameUpperCase.length > 2) {
-        const lastElementUpperCase = nameUpperCase.pop()
-        return 'HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
-      } else {
-        return 'HELLO ' + nameUpperCase.join(' AND ') + '!'
-      }
+      return onlyUpperCaseNames()
     }
+    return mixedCaseNames(nameUpperCase, name)
+  }
+
+  function isNotArray (name) {
+    if (!name || name.trim().length === 0) {
+      return 'Hello, my friend'
+    }
+    if (name.toUpperCase() === name) {
+      return 'HELLO, ' + name.toUpperCase() + '!'
+    }
+    return 'Hello, ' + name
+  }
+
+  function onlyUpperCaseNames (nameUpperCase) {
+    if (nameUpperCase.length > 2) {
+      const lastElementUpperCase = nameUpperCase.pop()
+      return 'HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+    } else {
+      return 'HELLO ' + nameUpperCase.join(' AND ') + '!'
+    }
+  }
+
+  function mixedCaseNames (nameUpperCase, name) {
     const lastElement = name.pop()
     if (nameUpperCase.length > 1) {
       const lastElementUpperCase = nameUpperCase.pop()
@@ -30,7 +47,6 @@ function greet (name) {
       return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '.'
     }
   }
-  return 'Hello, ' + name
 }
 
 module.exports = greet
