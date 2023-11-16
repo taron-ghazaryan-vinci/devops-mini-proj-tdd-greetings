@@ -1,7 +1,24 @@
 function greet (name) {
+  let hello = 'Hello'
+  let and = ' and '
+  let language = 'en'
   if (!Array.isArray(name)) {
     return isNotArray(name)
   } else {
+    for (let i = 0; i < name.length; i++) {
+      if (name[i] === 'fr' || name[i] === 'nl' || name[i] === 'en') {
+        language = name[i]
+        name.splice(i, 1)
+        break
+      }
+    }
+    if (language === 'fr') {
+      hello = 'Bonjour'
+      and = ' et '
+    } else if (language === 'nl') {
+      hello = 'Goeidag'
+      and = ' en '
+    }
     const nameUpperCase = []
     for (let i = 0; i < name.length; i++) {
       if (name[i] === name[i].toUpperCase()) {
@@ -11,9 +28,9 @@ function greet (name) {
       }
     }
     if (name.length === 0) {
-      return onlyUpperCaseNames()
+      return onlyUpperCaseNames(nameUpperCase, hello, and)
     }
-    return mixedCaseNames(nameUpperCase, name)
+    return mixedCaseNames(nameUpperCase, name, hello, and)
   }
 
   function isNotArray (name) {
@@ -26,25 +43,25 @@ function greet (name) {
     return 'Hello, ' + name
   }
 
-  function onlyUpperCaseNames (nameUpperCase) {
+  function onlyUpperCaseNames (nameUpperCase, hello, and) {
     if (nameUpperCase.length > 2) {
       const lastElementUpperCase = nameUpperCase.pop()
-      return 'HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+      return hello.toUpperCase() + ', ' + nameUpperCase.join(', ') + and.toUpperCase() + lastElementUpperCase + '!'
     } else {
-      return 'HELLO ' + nameUpperCase.join(' AND ') + '!'
+      return hello.toUpperCase() + ', ' + nameUpperCase.join(' AND ') + '!'
     }
   }
 
-  function mixedCaseNames (nameUpperCase, name) {
+  function mixedCaseNames (nameUpperCase, name, hello, and) {
     const lastElement = name.pop()
     if (nameUpperCase.length > 1) {
       const lastElementUpperCase = nameUpperCase.pop()
-      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '. AND HELLO ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+      return hello + ', ' + name.join(', ') + and + lastElement + '.' + and.toUpperCase() + hello.toUpperCase() + ' ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
     }
     if (nameUpperCase.length === 1) {
-      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '. AND HELLO ' + nameUpperCase[0] + '!'
+      return hello + ', ' + name.join(', ') + and + lastElement + '.' + and.toUpperCase() + hello.toUpperCase() + ' ' + nameUpperCase[0] + '!'
     } else {
-      return 'Hello, ' + name.join(', ') + ' and ' + lastElement + '.'
+      return hello + ', ' + name.join(', ') + and + lastElement + '.'
     }
   }
 }

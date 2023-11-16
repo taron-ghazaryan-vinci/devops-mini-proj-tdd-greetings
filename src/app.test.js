@@ -30,3 +30,18 @@ test('greet should return "Hello, Thanatos and Hypnos. AND HELLO KRATOS!" when [
   const multipleNames = ['KRATOS', 'Thanathos', 'Hypnos']
   expect(greet(multipleNames)).toBe('Hello, Thanathos and Hypnos. AND HELLO KRATOS!')
 })
+
+test('greet should return "Hello, Thanatos and Hypnos. AND HELLO KRATOS AND ZEUS!" when ["KRATOS", "Thanathos", "Hypnos", "ZEUS"] is given', () => {
+  const multipleNames = ['KRATOS', 'Thanathos', 'Hypnos', 'ZEUS']
+  expect(greet(multipleNames)).toBe('Hello, Thanathos and Hypnos. AND HELLO KRATOS AND ZEUS!')
+})
+
+test('greet should return "HELLO KRATOS, THANATHOS AND HYPNOS!" when ["KRATOS", "THANATHOS", "HYPNOS"] is given', () => {
+  const onlyUpperCaseNames = ['KRATOS', 'THANATHOS', 'HYPNOS']
+  expect(greet(onlyUpperCaseNames)).toBe('HELLO, KRATOS, THANATHOS AND HYPNOS!')
+})
+
+test('greet should return "Hello, Thanatos and Hypnos. AND HELLO KRATOS!" when ["KRATOS", "Thanathos", "Hypnos"] is given', () => {
+  const inFrench = ['Kratos', 'fr', 'Thanathos']
+  expect(greet(inFrench)).toBe('Bonjour, Kratos et Thanathos.')
+})
