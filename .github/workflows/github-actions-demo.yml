@@ -26,4 +26,4 @@ jobs:
         run: npm install
 
       - name: Prettier code
-        run : npm prettier:fix 
+        run : npm run prettier:fix 
