@@ -20,8 +20,7 @@ jobs:
           node-version: '14'
 
       - name: Display Start Time
-        run: echo "Start Time (CET): $(TZ='Europe/Paris' date +'%Y-%m-%d %T')"
+        run: echo "Start Time (CET): $(TZ='Europe/Paris' date +'%H:%M:%S')"
 
       - name: Install dependencies
         run: npm install
-
