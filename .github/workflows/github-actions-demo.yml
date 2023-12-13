@@ -17,10 +17,19 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '18'
+          node-version: '14'
 
-      - name: Display Start Time
-        run:  `Start Time (CET): $(TZ='Europe/Paris' date +'%H:%M:%S')`
+      - name: Set Start Time
+        id: start-time
+        run: |
+          echo "::set-output name=time::$(TZ='Europe/Paris' date +'%H:%M:%S')"
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Use Start Time in Subsequent Steps
+        run: |
+          start_time="${{ steps.start-time.outputs.time }}"
 
       - name: Install dependencies
         run: npm install
