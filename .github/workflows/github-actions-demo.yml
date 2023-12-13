@@ -1,5 +1,11 @@
 name: GitHub Actions Demo
-on: [push]
+on:
+  push :
+    branches-ignore: 
+      -main
+  pull_request:
+    branches:    
+      - main
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
@@ -12,8 +18,8 @@ jobs:
         with:
           node-version: '14'
 
+      - name: Display Start Time
+        run: echo "Start Time: $(date +'%Y-%m-%d %T')"
+
       - name: Install dependencies
         run: npm install
-
-      - name: Test code with Jest
-        run: npm test
