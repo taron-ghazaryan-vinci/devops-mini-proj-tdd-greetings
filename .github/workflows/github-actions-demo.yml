@@ -1,20 +1,19 @@
 name: GitHub Actions Demo
-run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
-    uses: actions/checkout@v4
-      uses: actions/setup-node@v3
-    with:
-    uses: actions/checkout@v4
-    uses: actions/setup-node@v3
-    with:
-      node-version: '14'
-
     steps:
-      - name: "Install dependencies"
-        run: "npm install"
-      -name: "Test code with Jest"
-        run: "npm test"
-      
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Test code with Jest
+        run: npm test
