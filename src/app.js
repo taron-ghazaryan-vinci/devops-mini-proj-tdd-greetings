@@ -40,9 +40,18 @@ function greet (name) {
   function onlyUpperCaseNames (nameUpperCase, hello, and) {
     if (nameUpperCase.length > 2) {
       const lastElementUpperCase = nameUpperCase.pop()
-      return hello.toUpperCase() + ', ' + nameUpperCase.join(', ') + and.toUpperCase() + lastElementUpperCase + '!'
+      return (
+        hello.toUpperCase() +
+                ', ' +
+                nameUpperCase.join(', ') +
+                and.toUpperCase() +
+                lastElementUpperCase +
+                '!'
+      )
     } else {
-      return hello.toUpperCase() + ', ' + nameUpperCase.join(' AND ') + '!'
+      return (
+        hello.toUpperCase() + ', ' + nameUpperCase.join(' AND ') + '!'
+      )
     }
   }
 
@@ -50,10 +59,36 @@ function greet (name) {
     const lastElement = name.pop()
     if (nameUpperCase.length > 1) {
       const lastElementUpperCase = nameUpperCase.pop()
-      return hello + ', ' + name.join(', ') + and + lastElement + '.' + and.toUpperCase() + hello.toUpperCase() + ' ' + nameUpperCase.join(', ') + ' AND ' + lastElementUpperCase + '!'
+      return (
+        hello +
+                ', ' +
+                name.join(', ') +
+                and +
+                lastElement +
+                '.' +
+                and.toUpperCase() +
+                hello.toUpperCase() +
+                ' ' +
+                nameUpperCase.join(', ') +
+                ' AND ' +
+                lastElementUpperCase +
+                '!'
+      )
     }
     if (nameUpperCase.length === 1) {
-      return hello + ', ' + name.join(', ') + and + lastElement + '.' + and.toUpperCase() + hello.toUpperCase() + ' ' + nameUpperCase[0] + '!'
+      return (
+        hello +
+                ', ' +
+                name.join(', ') +
+                and +
+                lastElement +
+                '.' +
+                and.toUpperCase() +
+                hello.toUpperCase() +
+                ' ' +
+                nameUpperCase[0] +
+                '!'
+      )
     } else {
       return hello + ', ' + name.join(', ') + and + lastElement + '.'
     }
