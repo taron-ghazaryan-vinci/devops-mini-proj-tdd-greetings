@@ -21,6 +21,9 @@ jobs:
 
       - name: Display Start Time
         run: echo "Start Time (CET):" + " $(TZ='Europe/Paris' date +'%H:%M:%S')"
-
+          
       - name: Install dependencies
         run: npm install
+
+      - name: Prettier code
+        run : npm prettier:fix 
