@@ -4,9 +4,17 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    uses: actions/checkout@v4
+      uses: actions/setup-node@v3
+    with:
+    uses: actions/checkout@v4
+    uses: actions/setup-node@v3
+    with:
+      node-version: '14'
+
     steps:
       - name: "Install dependencies"
-      run: "npm install"
+        run: "npm install"
       -name: "Test code with Jest"
-      run: "npm test"
+        run: "npm test"
       
