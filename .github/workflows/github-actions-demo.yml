@@ -27,4 +27,4 @@ jobs:
 
       - name: Prettier code
         run : npm run prettier:fix 
-        run : npm run prettier
+              npm run prettier
