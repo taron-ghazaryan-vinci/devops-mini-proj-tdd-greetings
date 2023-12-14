@@ -11,7 +11,8 @@
         "prettier": "prettier --check .",
         "prettier:fix": "prettier --write .",
         "list": "ls -la",
-        "test:coverage": "jest --coverage"
+        "test:coverage": "jest --coverage",
+        "build": "webpack ./greet.js -o dist/ --mode=development"
     },
     "keywords": [
         "course"
