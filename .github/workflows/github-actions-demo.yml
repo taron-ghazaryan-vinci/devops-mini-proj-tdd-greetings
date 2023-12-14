@@ -34,4 +34,5 @@ jobs:
             - name: Test and coverage
               run: npm run test:coverage
 
-           
+            - name: Build the app
+              run: npm run build
