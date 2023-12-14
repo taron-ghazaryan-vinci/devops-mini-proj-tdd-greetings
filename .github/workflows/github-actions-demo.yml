@@ -37,8 +37,8 @@ jobs:
             - name: Build the app
               run: npm run build
 
-           - name: Display Finish Time
+            - name: Display Finish Time
               run: echo "Finish Time (CET):" + " $(TZ='Europe/Paris' date +'%H:%M:%S')"
 
-           - name: Display Message
+            - name: Display Message
               run: echo "PIPELINE SUCCESS WITHOUT ERRORS"
