@@ -51,35 +51,37 @@ Liens utiles:
 -   Décrivez brièvement ce que fait votre fichier YML.
 
 ```bash
-<votre réponse ici>
+Notre fichier YML s'exécute lors d une pull request sur la main et lors d'un push sur les autres branche. Il met d'abord en place Node.js ensuite il affiche l'heure de l'exécution du fichier dans la pipeline , il installe les dépendences, il configure Eslint et Prettier pour notre projet, il test notre projet et affiche le coverage, il build le projet et finalement affiche l'heure de fin de pipeline et un petit message.
 ```
 
 -   En particulier : à quoi sert le “on” ? dans votre fichier YML ? Quelle est la différence entre “on push” et “on pull request”. Que conseilleriez-vous comme option parmi ces 2 options à un groupe de développeurs junior ? Pourquoi ?
 
 ```bash
-<votre réponse ici>
+Le "on" sert a définir quand est-ce que la pipeline doit être déclenchée et alors on a les options : "on push" et "on pull request".
+Nous conseillerions "on pull request" pour éviter que des mauvaises modifications arrivent sur la branche principale et cela permettrait aussi de faire check les mofications par les personnes plus expérimentées plus facilement.
 ```
 
 -   Quelle est la différence entre run et run_on ? Expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+La commande run est utilisé pour spécifier les commandes qui vont s'executer lors d'une étape tandis que la commande run on est utilisé pour specifier les evenements qui vont executer le flux de travail.
 ```
 
 -   Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+La commande use sert à incorporer des actions predefinies par GitHub Actions dans notre pipeline tandis le run sert à executer des commandes durant des etapes qui sont beaucoup plus specifiques à notre workflow (exemple : l'installation des dépendances)
 ```
 
 -   Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
 
 ```bash
-<votre réponse ici>
+oui et non car dans notre pipeline nous aurions très bien pu intervertir certaines étapes comme la configuration du prettier et du linter mais nous serions obligés de commencer dans tout les cas par l'installation des dépendances car les étapes ultérieur en dependent
 ```
 
 -   Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
 
 ```bash
-<votre réponse ici>
+<"
+Pour ajouter un test de sécurité, vous pouvez ajouter une nouvelle étape après celles existant déjà dans la pipeline avec la commande run afin que celle-ci s'exécute. Il faudra juste faire attention à installer les dépendences dont le programme à besoin.
 ```

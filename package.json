@@ -17,7 +17,7 @@
     "keywords": [
         "course"
     ],
-    "author": "dls",
+    "author": "Ghazaryan Taron, Axmad Muxamad Mostafa",
     "license": "ISC",
     "devDependencies": {
         "eslint": "^8.53.0",
