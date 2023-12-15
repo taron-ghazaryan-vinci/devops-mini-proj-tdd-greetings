@@ -71,7 +71,7 @@ La commande run est utilisé pour spécifier les commandes qui vont s'executer l
 -   Quelle est la différence entre “use” et “run”. Expliquez par rapport à votre pipeline.
 
 ```bash
-La commande use sert à incorporer des actions predefinies par GitHub Actions dans notre pipeline tandis le run sert à executer des commandes durant des etapes qui sont beaucoup plus specifiques à notre workflow (exemple : l'installation des dépendances)
+La commande use sert à incorporer des actions predefinies par GitHub Actions dans notre pipeline tandis le run sert à executer des commandes durant des etapes qui sont beaucoup plus specifiques à notre workflow (exemple : l'installation des dépendances).
 ```
 
 -   Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
