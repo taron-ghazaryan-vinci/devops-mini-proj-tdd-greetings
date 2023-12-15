@@ -76,7 +76,7 @@ La commande use sert à incorporer des actions predefinies par GitHub Actions da
 -   Peut-on intervertir différentes étapes dans votre pipeline ? Que votre réponse soit oui ou non, expliquez par rapport à votre pipeline.
 
 ```bash
-oui et non car dans notre pipeline nous aurions très bien pu intervertir certaines étapes comme la configuration du prettier et du linter mais nous serions obligés de commencer dans tout les cas par l'installation des dépendances car les étapes ultérieur en dependent
+oui et non car dans notre pipeline nous aurions très bien pu intervertir certaines étapes comme la configuration du prettier et du linter mais nous serions obligés de commencer dans tout les cas par l'installation des dépendances car les étapes ultérieur en dependent.
 ```
 
 -   Je veux ajouter un test de sécurité sur mon pipeline en exécutant le programme secure_app. Que devrais-je faire ? Quelles questions devriez-vous vous poser ?
