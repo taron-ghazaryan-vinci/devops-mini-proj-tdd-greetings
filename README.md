@@ -8,8 +8,9 @@ Travail de recherche , mettre en place de l'integration continue avec les GitHub
 
 ## Informations
 
--   N° de groupe :8
+-   N° de groupe : 8
 -   Membres du groupe :Ghazaryan Taron , Axmad Muxamad Mostafa
+-   Lien vers le dépôt github : https://github.com/taron-ghazaryan-vinci/devops-mini-proj-tdd-greetings
 
 ## Énoncé
 
